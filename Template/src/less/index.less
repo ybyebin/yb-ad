@@ -1,0 +1,603 @@
+html {
+    background: #222222;
+}
+body,
+div,
+p,
+section
+ {
+    margin: 0;
+    padding: 0
+}
+img {
+    border: 0
+}
+q:before,
+q:after {
+    content: ''
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.actives:active{
+    transform: translate(0.02rem, 0.02rem);
+}
+
+body {
+
+    // margin: 0 auto !important;
+    // font-family: 'Noto Sans', sans-serif;
+    font-size: 100%;
+   
+   
+}
+.sec{
+    // background: red;
+}
+.absolutes{
+    position: absolute;
+}
+
+section {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    margin: auto;
+    overflow: hidden;
+    background: #f3dfe5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 32;
+    font-size: 0;
+
+
+    
+    img{
+        width: 100%;
+    }
+    a{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1.6rem;
+        height: .8rem;
+        display: inline-block;
+    }
+}
+.mask{
+    // display: none;
+    position: absolute;
+    width: 100%;
+    top: .8rem;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, .6);
+}
+.des{
+    // display: none;
+
+    position: absolute;
+    top: .8rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 6.4rem;
+    height: 3.34rem;
+    z-index: 4;
+    font-size: .3rem;
+    line-height: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../image/kuang.png);
+    background-size: 100%;
+
+    >div{
+        width: 3.2rem;
+    }
+}
+.act{
+    position: absolute;
+    width: 100%;
+    top: .8rem;
+    bottom: 0;
+    z-index: 1;
+}
+.first-act{
+    top: 0;
+    text-align: center;
+    background-image: url(../image/bg-one.jpg);
+    background-size: 100%;
+    
+}
+.blood-volume{
+    width: 5.94rem;
+    height: .38rem;
+    margin: auto;
+    background-image: url(../image/blood-bg.png);
+    background-size: 100%;
+    position: absolute;
+    top: 12.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .24rem;
+    color: #fff;
+    padding: 0 .08rem;
+    .blood{
+        position: absolute;
+        top: 50%;
+       
+        transform: translateY(-50%);
+        width: 5.78rem;
+      
+        div{
+            width: 100%;
+            background-image: url(../image/1.png);
+            background-size: .02rem .28rem;
+            height: .3rem;
+        }
+    }
+    .blood-percent{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+}
+.weapons{
+    position: absolute;
+    height: 2.56rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 21;
+    // background: rgba(0, 0, 0, .1);
+    .weapon-div{
+        display: flex;
+        justify-content: center;
+        font-size: .12rem;
+        >div{
+            text-align: center;
+        }
+        .num{
+            position: absolute;
+            bottom: 0.03rem;
+            right: 0.1rem;
+            color: #fff;
+        }
+        .juxing{
+            margin-top: .02rem;
+            color: #fff;
+            // background: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .fire{
+        position: absolute;
+        bottom: .3rem;
+        left: 0;
+        right: 0;
+        width: 2.08rem;
+        height: .72rem;
+        line-height: .72rem;
+        margin: auto;
+        font-size: .38rem;
+        background-image: url(../image/btn-fire.png);
+        background-size: 100%;
+    }
+}
+// 击中
+.hit{
+    position: absolute;
+    top:37%;
+    left: 2rem;
+    z-index: 22;
+    display: none;
+}
+.weap-weaps{
+    position: absolute;
+    display: none;
+    z-index: 22;
+
+}
+
+.weap-stone{
+    top: 65%;
+    left: 20%;
+}
+.weap-feibiao{
+    top: 65%;
+    left: 32%;
+}
+.weap-feidao{
+    top: 62%;
+    left: 65%;
+}
+.weap-nujian{
+    top: 60%;
+    left: 65%;
+}
+
+
+// 武器移动
+
+.weapen-stone-move {
+    animation: stonemove .1s 1;
+    animation-fill-mode: forwards;
+
+
+}
+.weapen-feibiao-move {
+    animation: feibiaomove .1s 1;
+    animation-fill-mode: forwards;
+}
+.weapen-feidao-move {
+    animation: feidaomove .1s 1;
+    animation-fill-mode: forwards;
+}
+.weapen-nujian-move {
+    animation: nujianmove .1s 1;
+    animation-fill-mode: forwards;
+
+}
+
+// 石头移动动画
+@keyframes stonemove {
+    from {
+        top: 65%;
+        left: 20%;
+    }
+    to {
+        top:  43%;
+        left: 32%;
+    }
+}
+
+@keyframes feibiaomove {
+    from {
+        top: 65%;
+        left: 32%;
+    }
+    to {
+        top:  43%;
+        left: 32%;
+    }
+}
+@keyframes feidaomove {
+    from {
+        top: 62%;
+        left: 65%;
+    }
+    to {
+        top:  43%;
+        left: 41%;
+    }
+}
+@keyframes nujianmove {
+    from {
+        top: 60%;
+        left: 65%;
+    }
+    to {
+        top:  43%;
+        left: 41%;
+    }
+}
+
+.man{
+    position: absolute;
+    width: 4.12rem;
+    height: 5.76rem;
+    background-image: url(../image/man.png);
+    background-size: 4.12rem 5.76rem;
+    background-repeat: no-repeat;
+    top: 24%;
+    left: 0;
+    z-index: 20;
+}
+.man-hit{
+    position: absolute;
+    width: 3.82rem;
+    height: 5.84rem;
+    background-image: url(../image/man-hit.png);
+    background-size: 3.82rem 5.84rem;
+    background-repeat: no-repeat;
+    top: 23%;
+    left: 0;
+    z-index: 20;
+    display: none;
+}
+.woman{  
+    position: absolute;
+    width: 3.36rem;
+    height: 5.36rem;
+    background-image: url(../image/women.png);
+    background-size: 3.36rem 5.36rem;
+    background-repeat: no-repeat;
+    top: 28%;
+    left: 37%;
+    z-index: 19;
+}
+
+.fail-hua{
+    
+    position: absolute;
+    width: 2.6rem;
+    height: 1.48rem;
+    background-image: url(../image/hua.png);
+    background-size: 2.6rem 1.48rem;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 25%;
+    z-index: 22;
+    display: none;
+}
+
+
+
+// 成功 失败
+.flag{
+    display: none;
+    position: absolute;
+    top: .8rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 4.94rem;
+    height: 6.34rem;
+    z-index: 4;
+    font-size: .3rem;
+    text-align: center;
+    background-image: url(../image/flag.png);
+    background-size: 100%;
+
+    .result{
+        height: 1.5rem;
+        margin-top: .9rem;
+        // background: blue;
+    }
+    .result-btn{
+        // background: blue;
+        margin-top: .8rem;
+        text-align: center;
+        p{
+            display: inline-block;
+            color: #fff;
+            // font-size: .44rem;
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+            }
+        }
+        p:last-child{
+            margin-top: .2rem;
+            color: #450000;
+        }
+    }
+}
+
+.success,
+.suc-2{
+    position: absolute;
+    top: 0rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    background-image: url(../image/suc-1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 25;
+    display: none;
+}
+.suc-2{
+    background-image: url(../image/suc-2.jpg);
+    text-align: center;
+    .result-btn{
+            margin-top: 6.8rem;
+            text-align: center;
+            font-size: 0;
+            p{
+                text-align: center;
+                height: .88rem;
+                a{
+                    display: inline-block;
+                }
+            }
+            p:last-child{
+                margin-top: .2rem;
+                color: #450000;
+            }
+    }
+    .suc-btn{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 图片
+.img{background:url(../image/img.png) no-repeat;
+background-size: 12.8rem 3.2rem;}
+.weapon{
+    position: relative;
+    height:1rem;
+    width:1.04rem;
+    // height: 1.08rem;
+    // width: 1.1rem;
+    background-position:0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.weapon-active{
+    height:1rem;
+    width:1.04rem;
+    background-position:-1.06rem 0;
+}
+.juxing{
+    height:.28rem;
+    width:1.48rem;
+    background-position:-4.42rem -.88rem;
+}
+
+.w-shitou{
+    height:.56rem;
+    width:.78rem;
+    background-position:-2.18rem 0;
+}
+.shitou{height:1.16rem;width:.82rem;background-position:-3.58rem 0;}
+.shitou02{height:.76rem;width:.58rem;background-position:-2.98rem 0;}
+
+.w-feidao{height:.8rem;width:.82rem;background-position:-7.58rem 0;}
+.feidao{height:1.14rem;width:.68rem;background-position:-9.08rem 0;}
+.feidao02{height:1.1rem;width:.64rem;background-position:-8.42rem 0;}
+
+.w-biao{height:0.8rem;width:.76rem;background-position:-4.42rem 0;}
+.biao{height:1.2rem;width:1.18rem;background-position:-6.38rem 0;}
+.biao02{height:.82rem;width:1.16rem;background-position:-5.2rem 0;}
+
+.w-nujian{height:.58rem;width:.86rem;background-position:-9.78rem 0;}
+.nujian{height:1.52rem;width:1.1rem;background-position:-11.7rem 0;}
+.nujian02{height:1.34rem;width:1.02rem;background-position:-10.66rem 0;}
+
+.hit{height:1.02rem;width:1.66rem;background-position:-2.68rem -2.08rem;}
+.btn-fire{height:.72rem;width:2.08rem;background-position:-2.68rem -1.26rem;}
+.btn-play-again{height:.88rem;width:2.58rem;background-position:0 -2.32rem;}
+.btn-down{height:.88rem;width:2.58rem;background-position:0 -1.34rem;}
+
+/* 新增-修改 */
+
+
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(.6, .6, .6);
+    }
+    40% {
+        opacity: 1;
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    80% {
+        transform: scale3d(1, 1, 1);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.bounceIn {
+    animation-name: bounceIn;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}

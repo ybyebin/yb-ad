@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>hina</title>
+    <meta content="width=320,height=480" name="ad.size">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name=viewport>
+    <meta content=no name="msapplication-tap-highlight">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://tpc.googlesyndication.com/pagead/gadgets/html5/api/exitapi.js"></script>
+    <script>
+        (function (window) {
+            var docWidth = 640;
+            var doc = window.document,
+                docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            var recalc = (function refreshRem() {
+                var clientWidth = docEl.getBoundingClientRect().width;
+                /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
+                docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 +
+                    'px';
+                var wh = document.documentElement.clientWidth;
+                if (wh >= 420) {
+                    wh = 420;
+                }
+                var ww = wh * 480 / 320;
+
+                var secs = document.getElementsByClassName("sec");
+                for (var i = 0; i < secs.length; i++) {
+                    secs[i].style.height = ww + 'px';
+                    secs[i].style.width = wh + 'px';
+                }
+                return refreshRem;
+            })();
+
+            /* 添加倍屏标识，安卓为1 */
+            docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio :
+                1);
+            if (!doc.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+            // document.documentElement.style.fontSize = wh / 16 + "px";
+        })(window)
+    </script>
+</head>
+
+<body>
+
+
+        <!-- <a href="javascript:;" onclick="ExitApi.exit()"></a> -->
+        <!-- <a href="javascript:;" onclick="FbPlayableAd.onCTAClick()"></a> -->
+
+    <section class="sec">
+
+    </section>
+    <script>
+        var wh = document.documentElement.clientWidth;
+        if (wh >= 640) {
+            wh = 640;
+        }
+        var ww = wh * 480 / 320;
+        var secs = document.getElementsByClassName("sec");
+        for (var i = 0; i < secs.length; i++) {
+            secs[i].style.height = ww + 'px';
+            secs[i].style.width = wh + 'px';
+        }
+    </script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

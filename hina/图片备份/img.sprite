@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../image" ImageName="img" IsPhone="false" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="shitou02.png" LocationX="149" LocationY="0" />
+    <Sprite Path="feidao02.png" LocationX="421" LocationY="0" />
+    <Sprite Path="feidao.png" LocationX="454" LocationY="0" />
+    <Sprite Path="w-biao.png" LocationX="221" LocationY="0" />
+    <Sprite Path="w-shitou.png" LocationX="109" LocationY="0" />
+    <Sprite Path="w-feidao.png" LocationX="379" LocationY="0" />
+    <Sprite Path="shitou.png" LocationX="179" LocationY="0" />
+    <Sprite Path="w-nujian.png" LocationX="489" LocationY="0" />
+    <Sprite Path="nujian02.png" LocationX="533" LocationY="0" />
+    <Sprite Path="weapon.png" LocationX="0" LocationY="0" />
+    <Sprite Path="weapon-active.png" LocationX="53" LocationY="0" />
+    <Sprite Path="nujian.png" LocationX="585" LocationY="0" />
+    <Sprite Path="biao02.png" LocationX="260" LocationY="0" />
+    <Sprite Path="biao.png" LocationX="319" LocationY="0" />
+    <Sprite Path="juxing.png" LocationX="221" LocationY="44" />
+    <Sprite Path="hit.png" LocationX="134" LocationY="104" />
+    <Sprite Path="btn-fire.png" LocationX="134" LocationY="63" />
+    <Sprite Path="btn-play-again.png" LocationX="0" LocationY="111" />
+    <Sprite Path="btn-down.png" LocationX="0" LocationY="63" />
+  </SpriteList>
+</SpriteFile>
